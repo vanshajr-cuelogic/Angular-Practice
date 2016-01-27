@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		#student_details label{
+			display: block;		}
+	</style>
+	<script src="js/angular.js"></script>
+	
+</head>
+<body ng-app="myApp">
+    <div class="header" ng-controller="MainController">
+      <div class="container">
+        <h1>{{ title | lowercase}}</h1>
+        <p>{{data | uppercase}}</p>
+        <p>{{cost | currency}}</p> <!-- $100.00 -->
+       	<p>Current Date : {{pubdate | date}}</p> <!-- Current Date -->
+       	Book Details :
+       	<div ng-repeat="product in products"> 
+		  <!-- <div class="thumbnail"> 
+		    <p class="title">{{ product.name }}</p> 
+		    <p class="price">{{ product.price | currency }}</p> 
+		    <p class="date">{{ product.pubdate | date }}</p> 
+		  </div> -->
+		  
+		  <table>
+			<tr>
+			<td>{{ product.name }}</td>
+			<td>{{product.price | currency  }}</td>
+			<td>{{  product.pubdate | date  }}</td>
+			</tr>
+		  </table>
+		</div>
+      </div>
+    </div>
+
+
+    <div class="header" ng-controller="MainController_student">
+      <div class="container">
+      <h1>Student Details </h1>
+      	<div id="student_details"></div>
+      </div>
+    </div>
+
+	
+
+
+	<script src="js/app.js"></script>
+	<script src="js/Controllers.js"></script>
+</body>
+</html>
