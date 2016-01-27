@@ -56,13 +56,13 @@
 	    			<td> Product Status </td>
     			</tr>
 			</thead>
-    		<tbody ng-repeat="product in products">
+    		<tbody ng-repeat="product in product_detail">
     			<tr>
-	    			<td> {{product.name}} </td>
-	    			<!-- <td> {{products.product_name}} </td>
-	    			<td> {{products.product_desc}} </td>
-	    			<td> {{products.product_cost}} </td>
-	    			<td> {{products.product_status}} </td> -->
+	    			<td> {{product.product_id}} </td>
+	    			<td> {{product.product_name | uppercase}} </td>
+	    			<td> {{product.product_desc}} </td>
+	    			<td> {{product.product_cost | currency}} </td>
+	    			<td> {{product.product_status}} </td>
     			</tr>
     		<tbody>
     	</table>

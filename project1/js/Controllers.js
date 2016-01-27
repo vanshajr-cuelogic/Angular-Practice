@@ -34,35 +34,36 @@ var product_cotrol = {
 app.controller('productController',['$scope',function($scope){
 	$scope.title = product_cotrol.title;
 	$scope.data = product_cotrol.data;
-	$scope.products = [{ 
-	      name: 'The Book of Trees', 
-	      price: 19, 
-	      pubfdate: new Date('2014', '03', '08'),
-	    }, 
-	    { 
-	      name: 'Program or be Programmed', 
-	      price: 8, 
-	      pubfdate: new Date('2013', '08', '01'),
-	    } 
-  	]
 
-
-
-	// $scope.product_detail = [{
-	// 		 product_id = 1001,
-	// 		 product_name = "xyz",
-	// 		 product_desc = "sds s sas sdsa ",
-	// 		 product_cost = 5000,
-	// 		 product_status = "Open"
-	// 		},
-	// 		{
-	// 		 product_id = 1002,
-	// 		 product_name = "abc",
-	// 		 product_desc = "sds s sas sdsa ",
-	// 		 product_cost = 120000,
-	// 		 product_status = "Close"
-	// 		}
-	// 	]
+	$scope.product_detail = [{
+			 product_id : 1001,
+			 product_name : "xyz",
+			 product_desc : "sds s sas sdsa ",
+			 product_cost : 5000,
+			 product_status : "Open",
+			},
+			{
+			 product_id : 1002,
+			 product_name : "abc",
+			 product_desc : "sds s sas sdsa ",
+			 product_cost : 120000,
+			 product_status : "Close",
+			},
+			{
+			 product_id : 1003,
+			 product_name : "abc",
+			 product_desc : "sds s sas sdsa ",
+			 product_cost : 150000,
+			 product_status : "Close",
+			},
+			{
+			 product_id : 1004,
+			 product_name : "abc",
+			 product_desc : "sds s sas sdsa ",
+			 product_cost : 120000,
+			 product_status : "Close",
+			}
+		]
 
 }]);
 
