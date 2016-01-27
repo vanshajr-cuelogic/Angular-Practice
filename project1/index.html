@@ -35,12 +35,38 @@
       </div>
     </div>
 
-
     <div class="header" ng-controller="MainController_student">
       <div class="container">
       <h1>Student Details </h1>
       	<div id="student_details"></div>
       </div>
+    </div>
+
+    <div class="product" ng-controller='productController' >
+    	<h1> {{title}} </h1>
+    	<h3> {{data}} </h3>
+    	<div class="prodcuts">
+    	<table colspan='5'>
+    		<thead>
+    			<tr>
+	    			<td> Product Id </td>
+	    			<td> Product Name </td>
+	    			<td> Product Description </td>
+	    			<td> Product Cost</td>
+	    			<td> Product Status </td>
+    			</tr>
+			</thead>
+    		<tbody ng-repeat="product in products">
+    			<tr>
+	    			<td> {{product.name}} </td>
+	    			<!-- <td> {{products.product_name}} </td>
+	    			<td> {{products.product_desc}} </td>
+	    			<td> {{products.product_cost}} </td>
+	    			<td> {{products.product_status}} </td> -->
+    			</tr>
+    		<tbody>
+    	</table>
+    </div>
     </div>
 
 	
