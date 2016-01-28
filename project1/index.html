@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title></title>
+	<script src="js/angular.js"></script>
 	<style>
 		#student_details label{
 			display: block;		
@@ -40,10 +41,31 @@
 		.card img{
 			width: 220px;
 			height: 200px;
+			opacity: 0.5;
+		}
+		.card img:hover{
+			opacity: 1;
+			cursor: pointer;
+		}
+		.day.row{
+			border:1px solid;
+			width: 200px;
+			float: left;
+			text-align: center;
+		}
+		.product, .main{
+			float: left;
+		}
+		.weather img{
+		    text-align: center;
+		    width: 50px;
+		    height: 50px;
+		    background-color: #000;
+		    border-radius: 100%;
+		    padding: 7px;
+		    border: 5px solid red;
 		}
 	</style>
-	<script src="js/angular.js"></script>
-	
 </head>
 <body ng-app="myApp">
     <div class="header" ng-controller="MainController">
@@ -71,13 +93,39 @@
       </div>
     </div>
 
-    <div class="header" ng-controller="MainController_student">
-      <div class="container">
+    <div class="header" ng-controller="forecastServiceController">
+    <!--   <div class="container">
       <h1>Student Details </h1>
       	<div id="student_details"></div>
-      </div>
-    </div>
+      </div> -->
 
+      <div class="container">
+        <div class="row">
+          <div>
+            <h1>{{ fiveDay.city_name }} Forecast Services :</h1>
+            <h2>5-day forecast</h2>
+            <div class="forecast" ng-repeat="day in fiveDay.days">
+              <div class="day row">
+                <div class="weekday col-md-4">
+                  <p>{{ day.datetime | date }}</p>
+                </div>
+                <div class="weather col-md-3">
+                  <img ng-src="{{ day.icon }}">
+                </div>
+                <div class="weather col-md-1">
+                </div>
+                <div class="high col-md-2">
+                  <p>{{ day.high }}&deg;</p>
+                </div>
+                <div class="low col-md-2">
+                  <p>{{ day.low }}&deg;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<br/>
     <div class="product" ng-controller='productController'>
     	<h1> {{title}} </h1>
     	<h3> {{data}} </h3>
@@ -136,25 +184,44 @@
     	</div>
     </div>
 
-    <div class="blog" ng-controller="blogEditController">
+    <div class="main blog" ng-controller="blogEditController">
     <h2> Blog :</h2>
     	<div class="container">
+    		
     		<div class="card">
-    			<blogInfo info="blog1"></blogInfo>
+    			<blog-info info="blog1"></blog-info>
     		</div>
-    	<!-- 	<div class="card">
-    			<blogInfo info="blog2"></blogInfo>
-    		</div> -->
+
+    		<div class="card">
+    			<blog-info info="blog2"></blog-info>
+    		</div>
+
     	</div>
     </div>
+
+
+    <div class="main array_directive" ng-controller="array_directive_Controller">
+    <h2> Blog Directive from JSON format </h2>
+    	<div class="container">
+    		<div class="card" ng-repeat="blog in blogs">
+    			<blog-info info="blog">
+    				 <install-app></install-app>
+    			</blog-info>
+    		</div>
+    	</div>
+    </div>
+
+
 
     <!-- App loader -->
 	<script src="js/app.js"></script>
 	<!-- Controller -->
 	<script src="js/Controllers.js"></script>
 	<!-- Directives -->
-	<script src="js/directive/blog_directive.js"></script>
     <script src="js/directive/product_directive.js"></script>
+    <!-- Services -->
+    <script src="js/services/forecast.js"></script>
+
     
 
 </body>

@@ -195,9 +195,43 @@ app.controller("blogEditController",["$scope",function($scope){
 	$scope.blog1 = {
 		editor : "Vanshaj Rai",
 		editor_id : 9,
+		icon: 'image/p5.jpg',
 	},
 	$scope.blog2 = {
 		editor : "Steve",
 		editor_id : 102,
+		icon: 'image/p4.jpg',
 	}
+}]);
+
+
+app.controller("array_directive_Controller",["$scope",function($scope){
+	$scope.blogs = [
+		{
+			editor : "Vanshaj Rai",
+			editor_id : 12121119,
+			icon: 'image/p5.jpg',
+		},
+		{
+			editor : "Steve",
+			editor_id : 102,
+			icon: 'image/p4.jpg',
+		},
+		{
+			editor : "Jack",
+			editor_id : 952,
+			icon: 'image/p5.jpg',
+		},
+		$scope.blog2 = {
+			editor : "Jill",
+			editor_id : 10102,
+			icon: 'image/p4.jpg',
+		}
+	]
+}]);
+
+app.controller('forecastServiceController', ['$scope', 'forecast', function($scope, forecast) {
+  forecast.success(function(data) {
+    $scope.fiveDay = data;
+  });
 }]);

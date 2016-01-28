@@ -10,4 +10,9 @@ uppercase
 lowercase
 currency
 
+SERVICES :
+app.factory
 
+
+Directives  : Directives are a way to make standalone UI components, like <app-info>
+Services : Services are a way to make standalone communication logic, like forecast which fetches weather data from a server
