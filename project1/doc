@@ -1,0 +1,13 @@
+DIRECTIVE :
+ng-app
+ng-repeat
+ng-src
+ng-controller
+ng-click
+
+FILTERS :
+uppercase
+lowercase
+currency
+
+

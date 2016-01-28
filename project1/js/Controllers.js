@@ -41,6 +41,10 @@ app.controller('productController',['$scope',function($scope){
 			 product_desc : "sds s sas sdsa ",
 			 product_cost : 5000,
 			 product_status : "Open",
+			 product_image : "./image/product.png",
+			 product_likes : 0,
+			 product_cart : 0,
+			 product_remove : 0,
 			},
 			{
 			 product_id : 1002,
@@ -48,6 +52,10 @@ app.controller('productController',['$scope',function($scope){
 			 product_desc : "sds s sas sdsa ",
 			 product_cost : 120000,
 			 product_status : "Close",
+			 product_image : "./image/product.png",
+			 product_likes : 0,
+			 product_cart : 0,
+			 product_remove : 0,
 			},
 			{
 			 product_id : 1003,
@@ -55,6 +63,10 @@ app.controller('productController',['$scope',function($scope){
 			 product_desc : "sds s sas sdsa ",
 			 product_cost : 150000,
 			 product_status : "Close",
+			 product_image : "./image/product.png",
+			 product_likes : 0,
+			 product_cart : 0,
+			 product_remove : 0,
 			},
 			{
 			 product_id : 1004,
@@ -62,9 +74,28 @@ app.controller('productController',['$scope',function($scope){
 			 product_desc : "sds s sas sdsa ",
 			 product_cost : 120000,
 			 product_status : "Close",
+			 product_image : "./image/product.png",
+			 product_likes : 0,
+			 product_cart : 0,
+			 product_remove : 0,
 			}
-		]
-
+		];
+		$scope.plusOne = function(index){
+			$scope.product_detail[index].product_likes += 1;
+		};
+		$scope.add_cart = function(index){
+			$scope.product_detail[index].product_cart += 1;
+		}
+		$scope.remove_cart = function(index){
+			if($scope.product_detail[index].product_cart == -1 || $scope.product_detail[index].product_remove == -1){
+				$scope.product_detail[index].product_cart = 0;
+			}
+			else{
+			$scope.product_detail[index].product_cart -= 1;
+			$scope.product_detail[index].product_remove = $scope.product_detail[index].product_cart;
+			$scope.product_detail[index].product_remove -= 1;
+			}
+		}
 }]);
 
 
@@ -115,12 +146,58 @@ app.controller('MainController_student',['$scope',function($scope){
 		document.getElementById("student_"+i).appendChild(set_attr_name); 
 		document.getElementById('student_contact_'+i).innerHTML ="Contact :"+ student[i].student_contact;
 
-
-
-
 		// $scope.student_name =  student[i].student_name;
 		// $scope.student_details = student[i].student_details;
 		// $scope.student_roll_no = student[i].student_roll_no;
 		// $scope.student_contact = student[i].student_contact;
+	}
+}]);
+
+
+app.controller('productDirectiveController',["$scope",function($scope){
+	$scope.move1 = {
+		id : 1001,
+		icon: 'image/p1.png',
+		title: 'MOVE',
+		price: 0.99
+	};
+
+	$scope.move2 = {
+		id : 1002,
+		icon: 'image/p2.jpg',
+		title: 'Shutterbugg',
+		price: 2.99
+	};
+
+	$scope.move3 = {
+		id : 1003,
+		icon: 'image/p3.jpg',
+		title: 'Gameboard',
+		price: 8.99
+	};
+
+	$scope.move4 = {
+		id : 1004,
+		icon: 'image/p4.jpg',
+		title: 'Gameboard',
+		price: 6.99
+	};
+
+	$scope.move5 = {
+		id : 1005,
+		icon: 'image/p5.jpg',
+		title: 'Gameboard',
+		price: 1.00
+	};
+}]);
+
+app.controller("blogEditController",["$scope",function($scope){
+	$scope.blog1 = {
+		editor : "Vanshaj Rai",
+		editor_id : 9,
+	},
+	$scope.blog2 = {
+		editor : "Steve",
+		editor_id : 102,
 	}
 }]);

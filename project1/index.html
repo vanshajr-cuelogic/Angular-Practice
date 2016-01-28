@@ -4,7 +4,43 @@
 	<title></title>
 	<style>
 		#student_details label{
-			display: block;		}
+			display: block;		
+		}
+		.likes{
+		    color: #fff;
+		    background: red;
+		    text-align: center;
+		    cursor: pointer;
+		}
+		.product table thead{
+			background-color: #000;
+		}
+		.product table thead td{
+			padding:10px 20px;
+			color:#fff;
+			border-color:#fff;
+		}
+		.prodcuts table td{
+			border:1px solid;
+			text-align: center;
+			padding: 5px 0 0 0;
+		}
+		.add_cart,.remove_cart{
+			background: green;
+			color: #fff;
+		}
+		.card{
+			display: inline-block;
+		    border: 1px solid;
+		    text-align: center;
+		    padding: 10px;
+		    width: 223px;
+		    height: 320px;
+		}
+		.card img{
+			width: 220px;
+			height: 200px;
+		}
 	</style>
 	<script src="js/angular.js"></script>
 	
@@ -42,37 +78,84 @@
       </div>
     </div>
 
-    <div class="product" ng-controller='productController' >
+    <div class="product" ng-controller='productController'>
     	<h1> {{title}} </h1>
     	<h3> {{data}} </h3>
     	<div class="prodcuts">
     	<table colspan='5'>
     		<thead>
     			<tr>
+    				<td> Product Image </td>
 	    			<td> Product Id </td>
 	    			<td> Product Name </td>
 	    			<td> Product Description </td>
 	    			<td> Product Cost</td>
 	    			<td> Product Status </td>
+					<td> Like Product  </td>
+					<td> Add To Cart </td>
+					<td> Remove From Cart </td>
     			</tr>
 			</thead>
-    		<tbody ng-repeat="product in product_detail">
-    			<tr>
+    		<tbody>
+    			<tr ng-repeat="product in product_detail">
+	    			<td> <img ng-src="{{product.product_image}}" /> </td>
 	    			<td> {{product.product_id}} </td>
 	    			<td> {{product.product_name | uppercase}} </td>
 	    			<td> {{product.product_desc}} </td>
 	    			<td> {{product.product_cost | currency}} </td>
 	    			<td> {{product.product_status}} </td>
+	    			<td class="likes" ng-click="plusOne($index)">+ {{ product.product_likes }}</td> 
+	    			<td class="add_cart" ng-click="add_cart($index)"> {{ product.product_cart}}</td>
+	    			<td class="remove_cart" ng-click="remove_cart($index)"> {{ product.product_remove}}</td>
     			</tr>
     		<tbody>
     	</table>
     </div>
     </div>
 
-	
+    
+	<!-- Directive -->
+    <div class="main" ng-controller="productDirectiveController">
+      <h2> Product :</h2>
+    	<div class="container">
+           <div class="card"> 
+             <app-info info="move1"></app-info> 
+           </div>
+            <div class="card"> 
+             <app-info info="move2"></app-info> 
+           </div>
+            <div class="card"> 
+             <app-info info="move3"></app-info> 
+           </div>
+            <div class="card"> 
+             <app-info info="move4"></app-info> 
+           </div>
+            <div class="card"> 
+             <app-info info="move5"></app-info> 
+           </div>
+    	</div>
+    </div>
 
+    <div class="blog" ng-controller="blogEditController">
+    <h2> Blog :</h2>
+    	<div class="container">
+    		<div class="card">
+    			<blogInfo info="blog1"></blogInfo>
+    		</div>
+    	<!-- 	<div class="card">
+    			<blogInfo info="blog2"></blogInfo>
+    		</div> -->
+    	</div>
+    </div>
 
+    <!-- App loader -->
 	<script src="js/app.js"></script>
+	<!-- Controller -->
 	<script src="js/Controllers.js"></script>
+	<!-- Directives -->
+	<script src="js/directive/blog_directive.js"></script>
+    <script src="js/directive/product_directive.js"></script>
+    
+
 </body>
 </html>
