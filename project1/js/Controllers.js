@@ -226,7 +226,12 @@ app.controller("array_directive_Controller",["$scope",function($scope){
 			editor : "Jill",
 			editor_id : 10102,
 			icon: 'image/p4.jpg',
-		}
+		},
+		{
+			editor : "Jack",
+			editor_id : 952,
+			icon: 'image/p1.png',
+		},
 	]
 }]);
 
