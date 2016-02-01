@@ -8,6 +8,9 @@ app.directive('appInfo', function() {
   }; 
 });
 
+
+
+
 app.directive('blogInfo', function() { 
   return { 
     restrict: 'E', 
@@ -17,6 +20,9 @@ app.directive('blogInfo', function() {
     templateUrl: 'js/directive/blog_directive.html'
   }; 
 });
+
+
+
 
 app.directive('nestInfo',function(){
 	return { 

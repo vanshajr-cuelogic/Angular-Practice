@@ -16,3 +16,42 @@ app.factory
 
 Directives  : Directives are a way to make standalone UI components, like <app-info>
 Services : Services are a way to make standalone communication logic, like forecast which fetches weather data from a server
+
+
+AngularJS directives allow the developer to specify custom and reusable HTML tags that moderate the behavior of certain elements.
+
+ng-app
+Declares an element as a root element of the application allowing behavior to be modified through custom HTML tags.
+
+ng-bind
+Automatically changes the text of an HTML element to the value of a given expression.
+
+ng-model
+Similar to ng-bind, but allows two-way data binding between the view and the scope.
+
+ng-class
+Allows class attributes to be dynamically loaded.
+
+ng-controller
+Specifies a JavaScript controller class that evaluates HTML expressions.
+
+ng-repeat
+Instantiate an element once per item from a collection.
+
+ng-show & ng-hide
+Conditionally show or hide an element, depending on the value of a boolean expression.
+
+ng-switch
+Conditionally instantiate one template from a set of choices, depending on the value of a selection expression.
+
+ng-view
+The base directive responsible for handling routes that resolve JSON before rendering templates driven by specified controllers.
+
+ngClick
+The ngClick allows you to specify custom behavior when element is clicked.
+
+ngSubmit
+Enables binding angular expressions to onsubmit events.
+
+ngHref
+Using Angular markup like in an href attribute makes the page open to a wrong URL, if the user clicks that link before angular has a chance to replace the with actual URL, the link will be broken and will most likely return a 404 error. The ngHref directive solves this problem.

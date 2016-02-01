@@ -3,3 +3,4 @@ app.controller('PhotoController', ['$scope', 'photos', '$routeParams', function(
     $scope.detail = data[$routeParams.id];
   });
 }]);
+// Routing

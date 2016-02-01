@@ -7,5 +7,3 @@ app.factory('photos', ['$http', function($http) {
            return data;
          });
 }]);
-
-// For Routing

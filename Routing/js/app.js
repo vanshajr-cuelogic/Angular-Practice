@@ -1,0 +1,1 @@
+var app = angular.module("myApp",[]) /* For loading the Angular */
